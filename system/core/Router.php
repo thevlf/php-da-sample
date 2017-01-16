@@ -185,7 +185,9 @@ class CI_Router {
 	{
 		if ($this->default_controller === FALSE)
 		{
-			show_error("Unable to determine what should be displayed. A default route has not been specified in the routing file.");
+			head("Location: /main");
+			exit();
+			
 		}
 		// Is the method being specified?
 		if (strpos($this->default_controller, '/') !== FALSE)
