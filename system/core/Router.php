@@ -185,7 +185,7 @@ class CI_Router {
 	{
 		if ($this->default_controller === FALSE)
 		{
-			head('Location: /main');
+			header('Location: /main');
 			exit();
 			
 		}
