@@ -187,7 +187,9 @@ class CI_Router {
 		{
 			header('Location: /main');
 			exit();
-			
+			/* The line below was replaced with two above to address an issue where the site was reaching
+			this code path when trying to browse to the root of the site.  We suspect it could be a new runtime issue.
+			show_error("Unable to determine what should be displayed. A default route has not been specified in the routing file."); */
 		}
 		// Is the method being specified?
 		if (strpos($this->default_controller, '/') !== FALSE)
